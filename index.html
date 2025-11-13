@@ -20,19 +20,21 @@
     <script>
         function myFunction() {
             let person = prompt("What's your name?");
-            if (person) {
+            if (person != null) {
                 const hour = new Date().getHours();
-                let taking;
-                if (taking < 12) {
+                if (hour < 12) {
                     document.getElementById("demo").innerHTML =
                         "Good morning" + " " + person;
-                } else if (taking < 18) {
+                } else if (hour < 18) {
                     document.getElementById("demo").innerHTML =
                         "Good afternoon" + " " + person;
                 } else {
                     document.getElementById("demo").innerHTML =
                         "Good evening" + " " + person;
                 }
+            } else if ((person = "")) {
+                document.getElementById("demo").innerHTML =
+                    "Vui lòng hãy nhập tên của bạn!";
             }
         }
     </script>
