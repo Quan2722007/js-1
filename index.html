@@ -20,7 +20,7 @@
     <script>
         function myFunction() {
             let person = prompt("What's your name?");
-            if (person != null) {
+            if (person) {
                 const hour = new Date().getHours();
                 if (hour < 12) {
                     document.getElementById("demo").innerHTML =
@@ -32,9 +32,11 @@
                     document.getElementById("demo").innerHTML =
                         "Good evening" + " " + person;
                 }
-            } else if ((person = "")) {
+            } else if (person === "") {
                 document.getElementById("demo").innerHTML =
                     "Vui lòng hãy nhập tên của bạn!";
+            } else if (person != nall) {
+                document.getElementById("demo").innerHTML = "";
             }
         }
     </script>
